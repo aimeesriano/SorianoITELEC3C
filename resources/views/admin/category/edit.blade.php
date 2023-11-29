@@ -15,7 +15,7 @@
                         <div class="mb-3">
                             <h3>Edit {{ $category->cat_name }}</h3>
                             <label for="cat_name">Category Name</label>
-                            <input type="text" class="form-control" name="cat_name"
+                            <input type="text" class="form-control" name="category_name"
                                 placeholder="Enter category name" value="{{$category->cat_name}}">
                         </div>
                         <div class="mb-3">
