@@ -4,6 +4,9 @@
             {{ __('Dashboard') }}
             Hi... {{Auth::user()->name}}
         </h2>
+        <b style="float: right">Total users
+            <span class="badge text-bg-danger">{{count($users)}}</span>
+          </b>
     </x-slot>
 
     <div class="py-12">
@@ -25,7 +28,7 @@
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
+                                <td>{{$user->created_at->diffforHumans()}}</td>
                             </tr>
                         @endforeach
                     </tbody>

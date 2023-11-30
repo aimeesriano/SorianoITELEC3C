@@ -10,20 +10,20 @@
 
             <div class="col-md-4">
                 <div class="card p-3">
-                    <form action="{{ url('/edit_category_confirm', $category->id) }}" method="POST">
+                    <form action="{{ url('category/update/'. $categories->id) }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <h3>Edit {{ $category->cat_name }}</h3>
+                            <h3>Edit {{ $categories->cat_name }}</h3>
                             <label for="cat_name">Category Name</label>
-                            <input type="text" class="form-control" name="category_name"
-                                placeholder="Enter category name" value="{{$category->cat_name}}">
+                            <input type="text" class="form-control" name="cat_name"
+                                placeholder="Enter category name" value="{{$categories->cat_name}}">
                         </div>
                         <div class="mb-3">
                             <label for="user_id">User ID</label>
                             <input type="number" class="form-control" name="user_id" placeholder="Enter User ID"
-                                min="1" value="{{$category->user_id}}">
+                                min="1" value="{{$categories->user_id}}">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update Category</button>
                         <a href="{{route('AllCat')}}" class="btn btn-secondary">Back</a>
                     </form>
                 </div>
